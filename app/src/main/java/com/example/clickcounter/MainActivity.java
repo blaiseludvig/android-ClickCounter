@@ -28,7 +28,18 @@ public class MainActivity extends AppCompatActivity {
         addEventListeners();
 
 
+    }
 
+    static boolean isPrime(int n)
+    {
+        if (n <= 1)
+            return false;
+
+        for (int i = 2; i < n; i++)
+            if (n % i == 0)
+                return false;
+
+        return true;
     }
 
     private void addEventListeners() {
@@ -37,12 +48,19 @@ public class MainActivity extends AppCompatActivity {
             n += 1;
             textView.setText(String.valueOf(n));
 
-            if (n > 0)  {
+            if (isPrime(n)) {
+                textView.setTextColor(Color.rgb(255, 255, 255));
+                return;
+            }
+
+            if (n > 0) {
                 textView.setTextColor(Color.GREEN);
+                return;
             }
 
             if (n == 0) {
                 textView.setTextColor(Color.parseColor("#00FFFF"));
+                return;
             }
 
         });
@@ -52,12 +70,19 @@ public class MainActivity extends AppCompatActivity {
             n -= 1;
             textView.setText(String.valueOf(n));
 
-            if (n < 0){
+            if (isPrime(n)) {
+                textView.setTextColor(Color.rgb(255, 255, 255));
+                return;
+            }
+
+            if (n < 0) {
                 textView.setTextColor(Color.RED);
+                return;
             }
 
             if (n == 0) {
                 textView.setTextColor(Color.parseColor("#00ffFF"));
+                return;
             }
 
         });
