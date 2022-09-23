@@ -61,6 +61,19 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        btnPlus.setOnLongClickListener(view -> {
+            textView.setText(String.valueOf(0));
+            textView.setTextColor(Color.parseColor("#00FFFF"));
+            return true;
+        });
+
+        btnMinus.setOnLongClickListener(view -> {
+            textView.setText(String.valueOf(0));
+            textView.setTextColor(Color.parseColor("#00FFFF"));
+            return true;
+        });
+
     }
 
     private void setComponents() {
